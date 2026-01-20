@@ -50,10 +50,10 @@ const CountUp = ({ value, label }: { value: string, label: string }) => {
 
     return (
         <div ref={ref} className="text-center group">
-            <p className="text-2xl lg:text-3xl font-bold text-gradient min-w-[80px]">
+            <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-gradient min-w-[60px] sm:min-w-[80px]">
                 {isSpecialValue ? value : `${displayValue}${suffix}`}
             </p>
-            <p className="text-sm text-gray-500 mt-1">{label}</p>
+            <p className="text-xs sm:text-sm text-gray-500 mt-1">{label}</p>
         </div>
     );
 };
@@ -82,13 +82,13 @@ export default function HeroSection() {
     const yStats = useTransform(smoothScrollY, [0, 500], [0, -60]); // Stats Bar (Mid-slow)
 
     return (
-        <AuroraBackground className="pt-20">
+        <AuroraBackground className="pt-16 sm:pt-20">
             <section
                 id="home"
                 className="relative w-full flex items-center"
             >
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 w-full">
+                    <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                         {/* Content */}
                         <motion.div
                             style={{ y: yText }} // Applied Parallax to Text
@@ -101,7 +101,7 @@ export default function HeroSection() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="inline-block px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-[var(--primary)]/20 text-[var(--primary-dark)] font-semibold text-sm mb-6 shadow-lg shadow-[var(--primary)]/10"
+                                className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/60 backdrop-blur-md border border-[var(--primary)]/20 text-[var(--primary-dark)] font-semibold text-xs sm:text-sm mb-4 sm:mb-6 shadow-lg shadow-[var(--primary)]/10"
                             >
                                 Your Trusted Medicine Information Platform
                             </motion.span>
@@ -110,7 +110,7 @@ export default function HeroSection() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3 }}
-                                className="heading-xl text-gray-900 mb-6"
+                                className="heading-xl text-gray-900 mb-4 sm:mb-6"
                             >
                                 <span className="text-gradient">Know Your</span>
                                 <br />
@@ -121,7 +121,7 @@ export default function HeroSection() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 }}
-                                className="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0"
+                                className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 px-2 sm:px-0"
                             >
                                 Accurate, easy-to-understand medicine information—when you need it.
                                 Check drug interactions and access reliable information before taking
@@ -132,25 +132,26 @@ export default function HeroSection() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5 }}
-                                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-2 sm:px-0"
                             >
-                                <Link href="/get-started">
+                                <Link href="/get-started" className="w-full sm:w-auto">
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="btn-primary flex items-center justify-center gap-2 shadow-xl shadow-[var(--primary)]/30"
+                                        className="btn-primary flex items-center justify-center gap-2 shadow-xl shadow-[var(--primary)]/30 w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3.5"
                                     >
                                         Check Interactions
                                     </motion.button>
                                 </Link>
-                                <Link href="/services/drug-interaction-checker">
+                                <Link href="/services/drug-interaction-checker" className="w-full sm:w-auto">
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="px-6 py-3.5 rounded-full font-semibold bg-white/70 backdrop-blur-md border border-gray-200 text-gray-700 hover:bg-white hover:border-[var(--primary)]/30 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+                                        className="px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-full font-semibold bg-white/70 backdrop-blur-md border border-gray-200 text-gray-700 hover:bg-white hover:border-[var(--primary)]/30 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg w-full sm:w-auto text-sm sm:text-base"
                                     >
-                                        <Play className="w-5 h-5 text-[var(--primary)]" />
-                                        See How It Works
+                                        <Play className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--primary)]" />
+                                        <span className="hidden xs:inline">See How It Works</span>
+                                        <span className="xs:hidden">How It Works</span>
                                     </motion.button>
                                 </Link>
                             </motion.div>
@@ -180,14 +181,14 @@ export default function HeroSection() {
                                         rotate: [0, 5, 0]
                                     }}
                                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                                    className="absolute -top-6 -right-6 z-20 bg-white/80 backdrop-blur-xl rounded-2xl p-4 shadow-xl shadow-green-500/20 border border-white/60"
+                                    className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 z-20 bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-xl shadow-green-500/20 border border-white/60"
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-green-100/80 backdrop-blur-sm flex items-center justify-center shadow-inner">
-                                            <Shield className="w-5 h-5 text-green-600" />
+                                    <div className="flex items-center gap-2 sm:gap-3">
+                                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-100/80 backdrop-blur-sm flex items-center justify-center shadow-inner">
+                                            <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                                         </div>
-                                        <div>
-                                            <p className="font-bold text-green-600">Safe</p>
+                                        <div className="hidden sm:block">
+                                            <p className="font-bold text-green-600 text-sm">Safe</p>
                                             <p className="text-xs text-gray-500">No Issues Found</p>
                                         </div>
                                     </div>
@@ -197,32 +198,32 @@ export default function HeroSection() {
                                 <motion.div
                                     animate={{ y: [0, -10, 0] }}
                                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                    className="relative z-10 bg-white/40 backdrop-blur-xl rounded-3xl p-8 shadow-2xl shadow-[var(--primary)]/20 border border-white/50 overflow-hidden"
+                                    className="relative z-10 bg-white/40 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl shadow-[var(--primary)]/20 border border-white/50 overflow-hidden"
                                 >
                                     {/* Glow effect */}
-                                    <div className="absolute -top-20 -right-20 w-40 h-40 bg-[var(--primary)]/30 rounded-full blur-3xl" />
-                                    <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[var(--accent)]/30 rounded-full blur-2xl" />
+                                    <div className="absolute -top-10 -right-10 sm:-top-20 sm:-right-20 w-20 h-20 sm:w-40 sm:h-40 bg-[var(--primary)]/30 rounded-full blur-3xl" />
+                                    <div className="absolute -bottom-5 -left-5 sm:-bottom-10 sm:-left-10 w-16 h-16 sm:w-32 sm:h-32 bg-[var(--accent)]/30 rounded-full blur-2xl" />
 
-                                    <div className="relative flex items-center gap-4 mb-6">
-                                        <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center shadow-lg shadow-[var(--primary)]/40">
-                                            <Shield className="w-8 h-8 text-white" />
+                                    <div className="relative flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl gradient-primary flex items-center justify-center shadow-lg shadow-[var(--primary)]/40">
+                                            <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-gray-900">
+                                            <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">
                                                 Drug Interaction Check
                                             </h3>
-                                            <p className="text-gray-500">Quick & Reliable Results</p>
+                                            <p className="text-xs sm:text-sm text-gray-500">Quick & Reliable Results</p>
                                         </div>
                                     </div>
 
-                                    <div className="relative space-y-4">
-                                        <div className="h-12 rounded-xl bg-white/70 backdrop-blur-sm border border-gray-100 flex items-center px-4 shadow-inner">
-                                            <span className="text-gray-400">Enter first medication...</span>
+                                    <div className="relative space-y-3 sm:space-y-4">
+                                        <div className="h-10 sm:h-12 rounded-lg sm:rounded-xl bg-white/70 backdrop-blur-sm border border-gray-100 flex items-center px-3 sm:px-4 shadow-inner">
+                                            <span className="text-gray-400 text-xs sm:text-sm">Enter first medication...</span>
                                         </div>
-                                        <div className="h-12 rounded-xl bg-white/70 backdrop-blur-sm border border-gray-100 flex items-center px-4 shadow-inner">
-                                            <span className="text-gray-400">Enter second medication...</span>
+                                        <div className="h-10 sm:h-12 rounded-lg sm:rounded-xl bg-white/70 backdrop-blur-sm border border-gray-100 flex items-center px-3 sm:px-4 shadow-inner">
+                                            <span className="text-gray-400 text-xs sm:text-sm">Enter second medication...</span>
                                         </div>
-                                        <button className="w-full py-3.5 rounded-xl gradient-primary text-white font-semibold shadow-lg shadow-[var(--primary)]/40 hover:shadow-xl hover:shadow-[var(--primary)]/50 transition-shadow">
+                                        <button className="w-full py-2.5 sm:py-3.5 rounded-lg sm:rounded-xl gradient-primary text-white font-semibold shadow-lg shadow-[var(--primary)]/40 hover:shadow-xl hover:shadow-[var(--primary)]/50 transition-shadow text-sm sm:text-base">
                                             Check Interaction
                                         </button>
                                     </div>
@@ -232,14 +233,14 @@ export default function HeroSection() {
                                 <motion.div
                                     animate={{ y: [0, -15, 0], rotate: [0, -5, 0] }}
                                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                    className="absolute -bottom-4 -left-4 z-20 bg-white/80 backdrop-blur-xl rounded-2xl p-4 shadow-xl shadow-[var(--primary)]/20 border border-white/60"
+                                    className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 z-20 bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-xl shadow-[var(--primary)]/20 border border-white/60"
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-[var(--accent)]/50 backdrop-blur-sm flex items-center justify-center shadow-inner">
-                                            <Users className="w-5 h-5 text-[var(--primary-dark)]" />
+                                    <div className="flex items-center gap-2 sm:gap-3">
+                                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[var(--accent)]/50 backdrop-blur-sm flex items-center justify-center shadow-inner">
+                                            <Users className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--primary-dark)]" />
                                         </div>
-                                        <div>
-                                            <p className="font-bold text-gray-900">5M+</p>
+                                        <div className="hidden sm:block">
+                                            <p className="font-bold text-gray-900 text-sm">5M+</p>
                                             <p className="text-xs text-gray-500">Trusted Data</p>
                                         </div>
                                     </div>
@@ -254,15 +255,15 @@ export default function HeroSection() {
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.7 }}
-                        className="mt-16 lg:mt-24"
+                        className="mt-8 sm:mt-12 lg:mt-24"
                     >
                         <div className="relative">
                             {/* Glow behind stats */}
-                            <div className="absolute inset-0 gradient-primary rounded-3xl blur-xl opacity-30" />
+                            <div className="absolute inset-0 gradient-primary rounded-2xl sm:rounded-3xl blur-xl opacity-30" />
 
-                            <div className="relative bg-white/60 backdrop-blur-xl rounded-3xl p-1 border border-white/50 shadow-2xl shadow-[var(--primary)]/20">
-                                <div className="bg-white/70 backdrop-blur-sm rounded-[22px] p-6 lg:p-8">
-                                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                            <div className="relative bg-white/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-1 border border-white/50 shadow-2xl shadow-[var(--primary)]/20">
+                                <div className="bg-white/70 backdrop-blur-sm rounded-[18px] sm:rounded-[22px] p-4 sm:p-6 lg:p-8">
+                                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                                         {stats.map((stat, index) => (
                                             <motion.div
                                                 key={stat.label}
@@ -271,9 +272,9 @@ export default function HeroSection() {
                                                 transition={{ delay: 0.8 + index * 0.1 }}
                                                 className="flex flex-col items-center justify-center"
                                             >
-                                                <div className="mb-3">
-                                                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--accent)]/50 to-[var(--primary)]/20 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-[var(--primary)]/30 transition-all duration-300">
-                                                        <stat.icon className="w-6 h-6 text-[var(--primary-dark)]" />
+                                                <div className="mb-2 sm:mb-3">
+                                                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-[var(--accent)]/50 to-[var(--primary)]/20 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-[var(--primary)]/30 transition-all duration-300">
+                                                        <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--primary-dark)]" />
                                                     </div>
                                                 </div>
                                                 {/* CountUp Animation Component */}

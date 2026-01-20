@@ -79,8 +79,8 @@ export default function ServicesSection() {
         <section id="services" className="section-padding relative overflow-hidden bg-gradient-to-b from-gray-50/50 to-white">
             {/* Background */}
             <div className="absolute inset-0 bg-pattern opacity-50" />
-            <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-r from-[var(--primary)]/10 to-transparent blur-3xl" />
-            <div className="absolute bottom-0 right-0 w-[600px] h-[400px] rounded-full bg-gradient-to-l from-[var(--accent)]/10 to-transparent blur-3xl" />
+            <div className="absolute top-1/4 -left-10 sm:-left-20 w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] rounded-full bg-gradient-to-r from-[var(--primary)]/10 to-transparent blur-3xl" />
+            <div className="absolute bottom-0 right-0 w-[300px] h-[200px] sm:w-[600px] sm:h-[400px] rounded-full bg-gradient-to-l from-[var(--accent)]/10 to-transparent blur-3xl" />
 
             <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 {/* Section Header */}
@@ -88,25 +88,25 @@ export default function ServicesSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-12 sm:mb-16"
                 >
-                    <span className="inline-block px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-[var(--primary)]/20 text-[var(--primary-dark)] font-semibold text-sm mb-4 shadow-lg shadow-[var(--primary)]/10">
+                    <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/60 backdrop-blur-md border border-[var(--primary)]/20 text-[var(--primary-dark)] font-semibold text-xs sm:text-sm mb-3 sm:mb-4 shadow-lg shadow-[var(--primary)]/10">
                         Our Services
                     </span>
-                    <h2 className="heading-lg text-gray-900 mb-4">
+                    <h2 className="heading-lg text-gray-900 mb-3 sm:mb-4 px-2 sm:px-0">
                         For Your <span className="text-gradient">Health</span>
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-2 sm:px-0">
                         Comprehensive tools and resources to help you make informed decisions
                         about your medications and health.
                     </p>
-                    <div className="flex justify-center mt-6">
+                    <div className="flex justify-center mt-4 sm:mt-6">
                         <div className="decoration-line" />
                     </div>
                 </motion.div>
 
                 {/* Services Grid - Clean Cards */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.title}
@@ -115,26 +115,26 @@ export default function ServicesSection() {
                             transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
                             className="group"
                         >
-                            <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 h-full border border-gray-100 shadow-lg hover:shadow-xl hover:border-[var(--primary)]/20 transition-all duration-300">
+                            <div className="bg-white/80 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 h-full border border-gray-100 shadow-lg hover:shadow-xl hover:border-[var(--primary)]/20 transition-all duration-300">
                                 {/* Icon */}
-                                <div className="mb-6">
-                                    <div className={`w-14 h-14 rounded-2xl ${service.iconBg} flex items-center justify-center`}>
-                                        <service.icon className={`w-7 h-7 ${service.iconColor}`} />
+                                <div className="mb-4 sm:mb-6">
+                                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl ${service.iconBg} flex items-center justify-center`}>
+                                        <service.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${service.iconColor}`} />
                                     </div>
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-600 leading-relaxed mb-6">
+                                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
                                     {service.description}
                                 </p>
 
                                 {/* Learn More Link */}
                                 <Link
                                     href={`/services/${service.slug}`}
-                                    className="inline-flex items-center text-[var(--primary)] font-medium hover:text-[var(--primary-dark)] transition-colors group/link"
+                                    className="inline-flex items-center text-[var(--primary)] font-medium hover:text-[var(--primary-dark)] transition-colors group/link text-sm sm:text-base"
                                 >
                                     <span>Learn More</span>
                                     <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
@@ -149,13 +149,13 @@ export default function ServicesSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.8 }}
-                    className="text-center mt-16"
+                    className="text-center mt-12 sm:mt-16"
                 >
                     <Link href="/get-started">
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="btn-primary shadow-xl shadow-[var(--primary)]/30"
+                            className="btn-primary shadow-xl shadow-[var(--primary)]/30 text-sm sm:text-base px-6 sm:px-8 py-2.5 sm:py-3.5"
                         >
                             Explore All Services
                         </motion.button>
