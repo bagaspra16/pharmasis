@@ -29,7 +29,8 @@ export default function ServicesPage() {
 
                 {/* Services Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {Object.entries(servicesData).map(([slug, service]) => (
+                    {servicesData && Object.keys(servicesData).length > 0 ? (
+                        Object.entries(servicesData).map(([slug, service]) => (
                         <Link
                             key={slug}
                             href={`/services/${slug}`}
@@ -53,7 +54,12 @@ export default function ServicesPage() {
                                 </div>
                             </div>
                         </Link>
-                    ))}
+                        ))
+                    ) : (
+                        <div className="col-span-full text-center py-12">
+                            <p className="text-gray-500">No services available at the moment.</p>
+                        </div>
+                    )}
                 </div>
             </div>
         </main>

@@ -9,10 +9,10 @@ import { servicesData } from "@/lib/data";
 
 export default function ServiceDetailClient() {
     const params = useParams();
-    const slug = params.slug as string;
-    const service = servicesData[slug];
+    const slug = params?.slug as string;
+    const service = slug && servicesData ? servicesData[slug] : null;
 
-    if (!service) {
+    if (!service || !slug) {
         return (
             <main className="min-h-screen flex items-center justify-center">
                 <div className="text-center">
