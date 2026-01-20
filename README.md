@@ -1,4 +1,4 @@
-# 🏥 Pharmasis | Know Your Medicine
+# Pharmasis | Know Your Medicine
 
 ![Pharmasis Banner](/public/pharmasis-logo.png)
 
