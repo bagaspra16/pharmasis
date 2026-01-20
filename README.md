@@ -8,22 +8,22 @@ Built with performance, accessibility, and modern aesthetics in mind, Pharmasis 
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- **💊 Drug Interaction Checker**: An intuitive interface for users to check safety between multiple medications.
-- **🇮🇩 Localized Experience**: tailored for Indonesian users with localized contact information (Jakarta, +62) while maintaining an international English UI.
-- **🎨 Modern Aesthetics**:
+- **Drug Interaction Checker**: An intuitive interface for users to check safety between multiple medications.
+- **Localized Experience**: tailored for Indonesian users with localized contact information (Jakarta, +62) while maintaining an international English UI.
+- **Modern Aesthetics**:
   - **Aurora Backgrounds**: Dynamic, GPU-accelerated background animations.
   - **Glassmorphism**: Premium "frosted glass" UI elements.
   - **Parallax Effects**: Multi-layered scrolling animations in the Hero section using `framer-motion`.
-- **⚡ High Performance**:
+- **High Performance**:
   - Optimized Hydration & SSR.
   - GPU-accelerated animations (`transform-gpu`).
   - Next.js 15+ Server Components.
-- **📱 Fully Responsive**: Seamless experience across mobile, tablet, and desktop devices.
-- **🔍 SEO Optimized**: Comprehensive metadata tags, JSON-LD structure, and OpenGraph support.
+- **Fully Responsive**: Seamless experience across mobile, tablet, and desktop devices.
+- **SEO Optimized**: Comprehensive metadata tags, JSON-LD structure, and OpenGraph support.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
@@ -32,7 +32,7 @@ Built with performance, accessibility, and modern aesthetics in mind, Pharmasis 
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Font**: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
 
-## 🚀 Getting Started
+## Getting Started
 
 First, install the dependencies:
 
@@ -56,7 +56,7 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 📂 Project Structure
+## Project Structure
 
 ```bash
 src/
@@ -75,13 +75,13 @@ src/
 └── ...
 ```
 
-## 🔒 Privacy & Legal
+## Privacy & Legal
 
 We take user data seriously. This project includes dedicated pages for:
 - [Privacy Policy](/src/app/privacy-policy/page.tsx)
 - [Terms of Service](/src/app/terms-of-service/page.tsx)
 
-## 📞 Contact
+## Contact
 
 - **Office**: Jababeka Health Centre, Jababeka, Cikarang
 - **Phone/WA**: +62 812-3299-9290
