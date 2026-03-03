@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import GetStartedContent from "./client";
 
 export const metadata: Metadata = {
-    title: "Coming Soon - Segera Hadir",
-    description: "Fitur lengkap Pharmasis akan segera hadir. Berlangganan untuk mendapatkan notifikasi peluncuran.",
+    title: "Get Started | Pharmasis App",
+    description: "Access the Pharmasis app at pharmasis-app.ct.ws — your trusted medicine information platform.",
 };
 
 export default function GetStartedPage() {

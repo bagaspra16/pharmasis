@@ -3,21 +3,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Sparkles, Clock, Bell } from "lucide-react";
-import { useState } from "react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+
+const PHARMASIS_APP_URL = "https://pharmasis-app.ct.ws/";
 
 export default function GetStartedContent() {
-    const [email, setEmail] = useState("");
-    const [isSubscribed, setIsSubscribed] = useState(false);
-
-    const handleSubscribe = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (email) {
-            setIsSubscribed(true);
-            setEmail("");
-        }
-    };
-
     return (
         <main className="min-h-screen bg-gradient-to-br from-white via-[var(--accent)]/5 to-white relative overflow-hidden">
             {/* Background Elements */}
@@ -38,13 +28,13 @@ export default function GetStartedContent() {
                 </div>
             </header>
 
-            {/* Main Content */}
+            {/* Main Content - Centered app link */}
             <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-100px)] px-4 py-8 sm:py-12">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-center max-w-3xl mx-auto"
+                    className="text-center max-w-2xl mx-auto w-full"
                 >
                     {/* Logo */}
                     <motion.div
@@ -61,111 +51,47 @@ export default function GetStartedContent() {
                         />
                     </motion.div>
 
-                    {/* Badge */}
-                    <motion.div
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/60 backdrop-blur-md border border-[var(--primary)]/20 mb-6 sm:mb-8"
+                        className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6"
                     >
-                        <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[var(--primary)]" />
-                        <span className="text-xs sm:text-sm font-medium text-[var(--primary-dark)]">Coming Soon</span>
-                    </motion.div>
+                        Try the Pharmasis app
+                    </motion.p>
 
-                    {/* Title */}
-                    <motion.h1
+                    {/* Centered URL display & CTA */}
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="heading-xl text-gray-900 mb-4 sm:mb-6 px-2 sm:px-0"
+                        className="bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-xl mb-6 sm:mb-8"
                     >
-                        Something{" "}
-                        <span className="text-gradient">Amazing</span>
-                        <br />
-                        is Coming
-                    </motion.h1>
+                        <p className="text-gray-500 text-xs sm:text-sm mb-2 sm:mb-3 font-medium">
+                            App URL
+                        </p>
+                        <p className="text-base sm:text-lg md:text-xl font-mono font-semibold text-gray-900 mb-4 sm:mb-6 break-all px-2">
+                            {PHARMASIS_APP_URL}
+                        </p>
+                        <a
+                            href={PHARMASIS_APP_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2 btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-3.5"
+                        >
+                            <span>Open Pharmasis App</span>
+                            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                        </a>
+                    </motion.div>
 
-                    {/* Description */}
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12 max-w-xl mx-auto px-2 sm:px-0"
+                        className="text-xs sm:text-sm text-gray-500 max-w-md mx-auto"
                     >
-                        We&apos;re working hard to bring you the most comprehensive drug interaction
-                        checker and medication safety platform. Be the first to know when we launch.
+                        You will be redirected to the Pharmasis application in a new tab.
                     </motion.p>
-
-                    {/* Subscribe Form */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                        className="max-w-md mx-auto px-2 sm:px-0"
-                    >
-                        {isSubscribed ? (
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                className="bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-green-200 shadow-lg"
-                            >
-                                <div className="flex items-center justify-center gap-2 sm:gap-3 text-green-600">
-                                    <Bell className="w-5 h-5 sm:w-6 sm:h-6" />
-                                    <span className="font-semibold text-sm sm:text-base">You&apos;re on the list!</span>
-                                </div>
-                                <p className="text-xs sm:text-sm text-gray-600 mt-2">
-                                    We&apos;ll notify you as soon as we launch.
-                                </p>
-                            </motion.div>
-                        ) : (
-                            <form onSubmit={handleSubscribe} className="relative">
-                                <div className="bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl p-2 border border-gray-100 shadow-xl flex flex-col sm:flex-row gap-2">
-                                    <input
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        placeholder="Enter your email"
-                                        required
-                                        className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent outline-none text-gray-900 placeholder:text-gray-400 text-sm sm:text-base"
-                                    />
-                                    <motion.button
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                        type="submit"
-                                        className="btn-primary whitespace-nowrap text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3.5"
-                                    >
-                                        Notify Me
-                                    </motion.button>
-                                </div>
-                            </form>
-                        )}
-                    </motion.div>
-
-                    {/* Timer/Stats */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.7 }}
-                        className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-4 sm:gap-8"
-                    >
-                        {[
-                            { icon: Clock, label: "Expected Launch", value: "Q1 2026" },
-                            { icon: Sparkles, label: "Features", value: "10+" },
-                        ].map((item) => (
-                            <div
-                                key={item.label}
-                                className="flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-white/60 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/50 shadow-lg"
-                            >
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[var(--accent)]/30 flex items-center justify-center">
-                                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--primary-dark)]" />
-                                </div>
-                                <div className="text-left">
-                                    <p className="text-xs sm:text-sm text-gray-500">{item.label}</p>
-                                    <p className="text-lg sm:text-xl font-bold text-gray-900">{item.value}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </motion.div>
                 </motion.div>
             </div>
 
