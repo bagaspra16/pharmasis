@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
-const PHARMASIS_APP_URL = "https://pharmasis-app.ct.ws/";
+const PHARMASIS_APP_URL = "https://pharmasis.biz.id/";
 
 export default function GetStartedContent() {
     return (

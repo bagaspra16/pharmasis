@@ -3,7 +3,7 @@ import GetStartedContent from "./client";
 
 export const metadata: Metadata = {
     title: "Get Started | Pharmasis App",
-    description: "Access the Pharmasis app at pharmasis-app.ct.ws — your trusted medicine information platform.",
+    description: "Access the Pharmasis app at pharmasis.biz.id — your trusted medicine information platform.",
 };
 
 export default function GetStartedPage() {

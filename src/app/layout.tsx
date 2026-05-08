@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Pharmasis | Know Your Medicine",
     description:
       "Accurate, easy-to-understand medicine information—when you need it. Check drug interactions and access reliable medication safety information.",
-    url: "https://pharmasis.id",
+    url: "https://pharmasis.biz.id",
     siteName: "Pharmasis",
     locale: "en_US",
     type: "website",
